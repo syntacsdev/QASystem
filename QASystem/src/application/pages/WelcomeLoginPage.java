@@ -74,7 +74,7 @@ public class WelcomeLoginPage {
 				new StudentHomePage().show(primaryStage);
 				break;
 			case INSTRUCTOR:
-				new InstructorHomePage().show(primaryStage);
+				new InstructorHomePage(this.databaseHelper, user).show(primaryStage);
 				break;
 			case STAFF:
 				new StaffHomePage(databaseHelper, user).show(primaryStage);

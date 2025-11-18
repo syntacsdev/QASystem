@@ -5,7 +5,8 @@ import java.util.Set;
 import application.StartCSE360;
 import application.User;
 import application.obj.Review;
-import application.pages.instructor.InstructorHomePage;
+import application.pages.instructor.InstructorViewRequestsPage;
+import databasePart1.DatabaseHelper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
@@ -18,6 +19,15 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class UserReviewsPage {
+	
+	private final DatabaseHelper database;
+	private final User user;
+	
+	public UserReviewsPage(DatabaseHelper helper, User user) {
+		this.database = helper;
+		this.user = user;
+	}
+	
 	public void show(Stage primaryStage, User user) {
 		// Get reviews for specific user from the reviewManager
 		Set<Review> reviewsSet = StartCSE360.getReviewManager().getReviewsByUser(user.getUserName());
@@ -38,7 +48,7 @@ public class UserReviewsPage {
 			ListView<Review> reviewsListView = new ListView<>(reviewsList);
 
 			// Create ListView elements and styling
-			reviewsListView.setCellFactory(listView -> new ListCell<Review>() {
+			reviewsListView.setCellFactory(_ -> new ListCell<Review>() {
 				private final Label ratingLabel = new Label();
 				private final Label reviewContent = new Label();
 				private final Label reviewAuthor = new Label();
@@ -86,8 +96,8 @@ public class UserReviewsPage {
 
 		// Back button
 		Button backBtn = new Button("Go back");
-		backBtn.setOnAction(a -> {
-			InstructorHomePage instructorHomePage = new InstructorHomePage();
+		backBtn.setOnAction(_ -> {
+			InstructorViewRequestsPage instructorHomePage = new InstructorViewRequestsPage(this.database, this.user);
 			instructorHomePage.show(primaryStage);
 		});
 		layout.getChildren().add(backBtn);
