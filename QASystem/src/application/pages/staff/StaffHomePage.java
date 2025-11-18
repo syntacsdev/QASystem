@@ -1,6 +1,7 @@
 package application.pages.staff;
 
 import application.User;
+import application.UserRole;
 import application.pages.SetupLoginSelectionPage;
 import application.util.LogUtil;
 import databasePart1.DatabaseHelper;
@@ -46,8 +47,6 @@ public class StaffHomePage {
 		backButtonBox.setPadding(new Insets(10, 10, 0, 10));
 		backButtonBox.getStyleClass().add("background");
 
-		// --- START OF CENTER ROW
-
 		// Basic welcome header
 		Label header1 = new Label("Welcome, " + this.user.getUserName() + "!");
 		header1.getStyleClass().add("header-main");
@@ -55,6 +54,11 @@ public class StaffHomePage {
 		// A simple sub-header
 		Label header2 = new Label("Select which dataset you'd like to view.");
 		header2.getStyleClass().add("header-sub");
+		
+		// Container for top row
+		VBox topRow = new VBox(5, backButtonBox, header1, header2);
+		topRow.getStyleClass().add("background");
+		topRow.setAlignment(Pos.CENTER);
 
 		// Navigation buttons
 		Button usersPageBtn = new Button("Users");
@@ -116,7 +120,7 @@ public class StaffHomePage {
 		});
 
 		// Container for center row
-		VBox centerRow = new VBox(3, header1, header2, usersPageBtn, questionsPageBtn, answersPageBtn, reviewsPageBtn,
+		VBox centerRow = new VBox(5, usersPageBtn, questionsPageBtn, answersPageBtn, reviewsPageBtn,
 				reviewReqsPageBtn, inviteCodesPageBtn);
 		centerRow.getStyleClass().add("background");
 		centerRow.setAlignment(Pos.CENTER);

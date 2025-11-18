@@ -6,6 +6,7 @@ import java.sql.Statement;
 
 import application.StartCSE360;
 import application.User;
+import application.UserRole;
 import application.util.LogUtil;
 import databasePart1.DatabaseHelper;
 import javafx.collections.FXCollections;
