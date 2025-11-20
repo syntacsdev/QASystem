@@ -137,7 +137,7 @@ public class StaffHomePage {
 
 		// Container for all the elements
 		BorderPane root = new BorderPane();
-		root.setTop(backButtonBox);
+		root.setTop(topRow);
 		root.setCenter(centerRow);
 		root.setBottom(bottomRow);
 		root.getStyleClass().add("background");
