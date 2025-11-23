@@ -54,7 +54,7 @@ public class StaffHomePage {
 		// A simple sub-header
 		Label header2 = new Label("Select which dataset you'd like to view.");
 		header2.getStyleClass().add("header-sub");
-		
+
 		// Container for top row
 		VBox topRow = new VBox(5, backButtonBox, header1, header2);
 		topRow.getStyleClass().add("background");
@@ -82,7 +82,6 @@ public class StaffHomePage {
 		Button inviteCodesPageBtn = new Button("Invitation Codes");
 		inviteCodesPageBtn.getStyleClass().add("action-button");
 
-		// TODO: Button logic
 		// Logic for users page button
 		usersPageBtn.setOnAction(_ -> {
 			StaffViewUsersPage target = new StaffViewUsersPage(this.database, this.user);
@@ -120,8 +119,8 @@ public class StaffHomePage {
 		});
 
 		// Container for center row
-		VBox centerRow = new VBox(5, usersPageBtn, questionsPageBtn, answersPageBtn, reviewsPageBtn,
-				reviewReqsPageBtn, inviteCodesPageBtn);
+		VBox centerRow = new VBox(5, usersPageBtn, questionsPageBtn, answersPageBtn, reviewsPageBtn, reviewReqsPageBtn,
+				inviteCodesPageBtn);
 		centerRow.getStyleClass().add("background");
 		centerRow.setAlignment(Pos.CENTER);
 
