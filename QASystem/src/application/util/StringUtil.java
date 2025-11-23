@@ -63,4 +63,24 @@ public class StringUtil {
 		}
 		return costs[s2.length()];
 	}
+
+	/**
+	 * Truncates a String if it exceeds a maximum length and adds trailing periods.
+	 * Strings whose length is less than or equal to the max length will be returned
+	 * unchanged.
+	 * 
+	 * @param text      - String to work with
+	 * @param maxLength - Threshold for truncation
+	 * @return String that has been truncated, if applicable
+	 */
+	public static String truncate(String text, int maxLength) {
+		if (text == null)
+			return null;
+		if (text.length() <= maxLength)
+			return text;
+		
+		int end = Math.min(maxLength, text.length());
+		String cut = text.substring(0, end).trim();
+		return cut + "...";
+	}
 }
