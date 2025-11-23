@@ -54,6 +54,10 @@ public class Question extends UserSubmission {
 	public String getContent() {
 		return content;
 	}
+	
+	public int getId() {
+		return this.id;
+	}
 
 	/**
 	 * Gets an unmodifiable list of all marked answers to the question (may be
