@@ -1,6 +1,14 @@
 package databasePart1;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import application.User;
@@ -238,6 +246,22 @@ public class DatabaseHelper {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public Set<String> getPendingReviewerNames() {
+		Set<String> result = new HashSet<>();
+		String query = "SELECT * FROM PendingReviewers";
+		try (ResultSet rs = this.statement.executeQuery(query)) {
+			while (rs.next()) {
+				String name = rs.getString("userName");
+				result.add(name);
+			}
+		} catch (SQLException e) {
+			LogUtil.error("Caught SQLException when trying to fetch all data from the PendingReviewers table.");
+			LogUtil.error("Printing stacktrace.");
+			e.printStackTrace();
+		}
+		return Collections.unmodifiableSet(result);
 	}
 
 	public void insertIntoPendingReviewers(String userName) {
