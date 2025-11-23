@@ -41,6 +41,21 @@
 .action-button:hover {
 	-fx-text-fill: #000;
 	-fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 12, 0.2, 0, 3);
+}
+
+.big-button {
+    -fx-font-family: "Arial";
+    -fx-font-size: 24px;
+    -fx-text-fill: #000;
+    -fx-padding: 10 20 10 20;
+    -fx-min-width: 120px;
+    -fx-min-height: 40px;
+}
+
+.big-button:hover {
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 12, 0.2, 0, 3);
 }
 
 .back-button {
@@ -59,4 +74,93 @@
 .background {
 	-fx-background-color: #f8f8f8;
 	-fx-padding: 10;
+}
+
+.background-top {
+    -fx-background-color: #f8f8f8;
+    -fx-padding: 10;
+    -fx-alignment: center; 
+}
+
+.background-center {
+    -fx-background-color: #f8f8f8;
+    -fx-padding: 10;
+    -fx-alignment: center; 
+}
+
+.background-bottom {
+    -fx-background-color: #f8f8f8;
+    -fx-padding: 10;
+    -fx-alignment: center;
+}
+
+.background-back-button {
+    -fx-background-color: #f8f8f8;
+    -fx-padding: 10;
+    -fx-alignment: center-left;
+}
+
+/* For the question list page */
+.qcell {
+    -fx-padding: 10;
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+}
+
+.qcell-id {
+    -fx-text-alignment: center-left;
+    -fx-text-fill: #949494;
+    -fx-font-size: 10px;
+}
+
+.qcell-asker {
+    -fx-text-alignment: center-left;
+    -fx-text-fill: #000;
+    -fx-font-style: italic;
+    -fx-font-size: 10px;
+}
+
+.qcell-title {
+    -fx-text-alignment: center-right;
+    -fx-text-fill: #000;
+	-fx-font-weight: bold;
+    -fx-font-size: 10px;
+}
+
+.qcell-ans-count {
+    -fx-text-alignment: center-left;
+    -fx-text-fill: #757575;
+    -fx-font-size: 10px;
+}
+
+.qcell-rev-count {
+    -fx-text-alignment: center-right;
+    -fx-text-fill: #757575;
+    -fx-font-size: 10px;
+}
+
+.qcell-date {
+    -fx-text-alignment: center-right;
+    -fx-text-fill: #a1a1a1;
+    -fx-font-style: italic;
+    -fx-font-size: 10px;
+}
+.list-cell:filled:hover {
+    -fx-background-color: #f2f5ff;
+    -fx-cursor: hand;
+}
+
+header-question-field {
+	-fx-font-family: "Arial";
+	-fx-font-size: 14px;
+	-fx-text-fill: #000;
+	-fx-alignment: center-left;
+	-fx-font-weight: bold;
+}
+
+text-box {
+	-fx-font-family: "Arial";
+	-fx-font-size: 14px;
+	-fx-text-fill: #000;
+	-fx-alignment: left;
 }
